@@ -15,6 +15,7 @@ dependencies {
     implementation("com.github.librepdf:openpdf:2.2.2")
     implementation("com.github.librepdf:openpdf-html:2.2.2")
     implementation("com.github.librepdf:openpdf-kotlin:2.2.2")
+    implementation("com.github.librepdf:openpdf-fonts-extra:2.2.2")
     implementation("org.slf4j:slf4j-simple:2.0.13")
     testImplementation(kotlin("test"))
 }

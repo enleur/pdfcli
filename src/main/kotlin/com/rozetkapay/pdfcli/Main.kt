@@ -1,5 +1,6 @@
 package com.rozetkapay.pdfcli
 
+import com.lowagie.text.pdf.BaseFont
 import org.openpdf.pdf.ITextRenderer
 import java.nio.file.Files
 import java.nio.file.Path
@@ -27,6 +28,8 @@ fun main(args: Array<String>) {
 
     output.use {
         ITextRenderer().apply {
+            // Register fonts with Unicode support for Cyrillic characters
+            fontResolver.addFont("fonts/ArialRegular.ttf", BaseFont.IDENTITY_H, true)
             setDocumentFromString(html, opts["--base"] ?: cwdAsUri())
             layout()
             createPDF(it)
